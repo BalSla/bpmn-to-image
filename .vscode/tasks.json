@@ -1,0 +1,57 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"command": "npm publish",
+			"label": "Update package at local NPM repository",
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"dependsOn": ["Start Verdaccio"],
+			"problemMatcher": {
+				"owner": "typescript",
+				"severity": "error",
+				"fileLocation": ["relative", "${workspaceFolder}"],
+				"pattern": {
+					"regexp": "^(.*)\\((\\d+),(\\d+)\\):\\s+(error)\\s+(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"severity": 4,
+					"message": 5
+				}
+			}
+		},
+		{
+			"type": "npm",
+			"script": "build",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: build",
+			"detail": "tsc -p tsconfig.build.json -noEmit -skipLibCheck"
+		},
+		{
+            "label": "Start Verdaccio",
+            "type": "shell",
+            "command": "verdaccio",
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "custom",
+                "pattern": {
+                    "regexp": "^(.*)$",
+                    "file": 1
+                },
+                "background": {
+                    "beginsPattern": ".*verdaccio.*",
+                    "endsPattern": ".*http address - .*"
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        }
+	]
+}

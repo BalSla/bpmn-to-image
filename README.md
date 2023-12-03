@@ -1,5 +1,7 @@
 # bpmn-to-image
 
+> This package is dependency for the [obsidian-azure-publisher](https://github.com/BalSla/obsidian-azure-publisher). It didn't published. Use it with local Verdaccio.
+
 [![CI](https://github.com/bpmn-io/bpmn-to-image/workflows/CI/badge.svg)](https://github.com/bpmn-io/bpmn-to-image/actions?query=workflow%3ACI)
 
 Convert [BPMN 2.0 diagrams](https://www.omg.org/spec/BPMN/2.0) to PDF documents, SVG or PNG files.

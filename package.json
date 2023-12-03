@@ -1,6 +1,6 @@
 {
   "name": "bpmn-to-image",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "Convert a BPMN 2.0 diagrams to PDF, SVG or PNG images",
   "main": "index.js",
   "bin": {
@@ -30,8 +30,8 @@
   "dependencies": {
     "bpmn-js": "^8.2.0",
     "chalk": "^2.4.2",
-    "meow": "^4.0.0",
-    "puppeteer": "18.1.0"
+    "meow": "^12.1.1",
+    "puppeteer": "^18.1.0"
   },
   "devDependencies": {
     "chai": "^4.3.1",
